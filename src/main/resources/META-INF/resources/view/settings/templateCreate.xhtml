@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/template/mainLayout.xhtml">
+
+    <ui:define name="title">
+        Новый шаблон
+    </ui:define>
+
+
+    <ui:define name="content">
+
+        <h:form id="newTemplateForm">
+
+            <p:growl id="growl" life="2000" /> 
+            
+            <div>
+                <p:commandButton id="saveButton" 
+                                 action="#{newTemplate.saveButtonAction}"
+                                 value="Сохранить"
+
+                                 ajax="false" update="growl"
+                                 />
+
+                <span style="margin-right:20px;"/>
+
+                <p:commandButton id="cancellButton" 
+                                 action="#{newTemplate.cancellButtonAction}"
+                                 value="Отмена"
+
+                                 ajax="false" update="growl"
+                                 />
+            </div>
+
+            <div style="text-decoration: underline;">
+                <h3>Новый шаблон</h3>
+            </div>
+
+            <!--Fields-->
+            <div class="ui-fluid">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2, ui-grid-col-5, ui-grid-col-1" layout="grid" styleClass="ui-panelgrid-blank ui-fluid">
+
+                    <p:outputLabel for="name" value="Наименование:"/>
+                    <p:inputText id="name" value="#{newTemplate.obj.name}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="content" value="Содержимое:"/>
+                    <p:inputText id="content" value="#{newTemplate.obj.content}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="orderNumber" value="Порядковый номер:"/>
+                    <p:inputText id="orderNumber" value="#{newTemplate.obj.orderNumber}"/>
+                    <p:spacer />
+
+                    <p:spacer />
+                    <p:spacer />
+                    <p:spacer />
+
+                </p:panelGrid>
+            </div>
+
+
+
+        </h:form>
+
+
+    </ui:define>
+
+
+</ui:composition>

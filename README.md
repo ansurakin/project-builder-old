@@ -1,0 +1,1 @@
+# Generate template for Java project

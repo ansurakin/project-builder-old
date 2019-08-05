@@ -1,0 +1,70 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/template/mainLayout.xhtml">
+
+    <ui:define name="title">
+        Новое приложение
+    </ui:define>
+
+
+    <ui:define name="content">
+
+        <h:form id="newProjectForm">
+
+            <p:growl id="growl" life="2000" /> 
+
+            <!--Навигационные кнопки-->
+            <ui:include src="../component/button/step-button-group.xhtml" />
+
+            <div style="text-decoration: underline;">
+                <h3>Имя и расположение</h3>
+            </div>
+
+            <!--Fields-->
+            <div class="ui-fluid">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2, ui-grid-col-5, ui-grid-col-1" layout="grid" styleClass="ui-panelgrid-blank ui-fluid">
+
+                    <p:outputLabel for="name" value="Имя проекта:"/>
+                    <p:inputText id="name" value="#{newProject.name}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="location" value="Расположение проекта:"/>
+                    <p:inputText id="location" value="#{newProject.location}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="groupId" value="Идентификатор группы:"/>
+                    <p:inputText id="groupId" value="#{newProject.groupId}"/>
+                    <p:spacer />
+                    
+                    <p:outputLabel for="artifactId" value="Идентификатор артефакта:"/>
+                    <p:inputText id="artifactId" value="#{newProject.artifactId}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="version" value="Версия:"/>
+                    <p:inputText id="version" value="#{newProject.version}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="packageName" value="Пакет:"/>
+                    <p:inputText id="packageName" value="#{newProject.packageName}"/>
+                    <p:spacer />
+
+                    <p:spacer />
+                    <p:spacer />
+                    <p:spacer />
+
+                </p:panelGrid>
+            </div>
+
+
+
+        </h:form>
+
+
+    </ui:define>
+
+
+</ui:composition>

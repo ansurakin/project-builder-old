@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"                
+                >
+
+    <p:menu>
+        <p:submenu label="Главная">
+            <p:menuitem value="Домой" url="/" />                            
+        </p:submenu>
+        <p:submenu label="Шаги">
+            <p:menuitem value="1. Имя и расположение" url="/new-project/new-application" />                            
+        </p:submenu>
+        <p:submenu label="Каталог">
+            <p:menuitem value="Url" url="/catalog/url/list" />
+            <p:menuitem value="Шаблоны" url="/template/list" />
+        </p:submenu>
+        <p:submenu label="Справка">
+            <p:menuitem value="Практика" url="/practice" />
+            <p:menuitem value="Спецификация" url="/specification" />
+            <p:menuitem value="Todo" url="/not-implemeted" />
+            <p:menuitem value="Исследование" url="/not-implemeted" />
+        </p:submenu>
+        <p:submenu label="Разработка">
+            <p:menuitem value="Тестовая" url="/test" />
+            <p:menuitem value="Не реализовано" url="/not-implemeted" />
+        </p:submenu>
+        <p:submenu label="Future">
+            <p:menuitem value="Развертывание" url="deployment" />
+            <p:menuitem value="Логи" url="not-implemeted" />
+            <p:menuitem value="Отчеты" url="not-implemeted" />
+        </p:submenu>
+    </p:menu>
+
+</ui:composition>

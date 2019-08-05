@@ -1,0 +1,24 @@
+1. Сообщения в faces-config.xml: resource-bundle
+2. Локаль locale-config
+3. PostConstruct для сборки отображаемых данных
+4. PreDestroy перед выходом бина из ОД
+5. Проверка ОД none чз PostConstruct, PreDestroy
+6. SQLite не работает апдейт. Разобраться с библиотекой
+7. context-param PROJECT_STAGE для отладки app.
+8. Таблица навигации шагов
+9. Навигация ч/з buttonLink.outcome, обработка buttonAction.action. Пр.96.
+10. Програмная navigation-rule, navigation-case
+11. Систама управления навигацией: синтаксическая диграмма стр.99. from-action, шаблоны, if. 
+12 Что есть в org.springframework.web.jsf.FacesContextUtils;
+13. Навигационные кнопки через свой специализированный тег
+14. ui:debug дерево компонентов на главной схеме Ctrl+Shift+d
+15. Кнопка cancell: исключение из проверки входных значений.
+16. Проверка правильности JSR-303, пр. NotNull
+17. контроллеры динамическое создание. 
+Пр. @Bean
+ServletRegistrationBean camelServlet() {
+    ServletRegistrationBean mapping = new ServletRegistrationBean();
+    mapping.setName("CamelServlet");
+    mapping.setServlet(new CamelHttpTransportServlet());
+    mapping.addUrlMappings("/api/*");
+

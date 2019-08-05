@@ -1,0 +1,77 @@
+<!--Эталон-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/template/mainLayout.xhtml">
+
+    <ui:define name="title">
+        Создать
+    </ui:define>
+
+
+    <ui:define name="content">
+
+        <h:form id="newUrlForm">
+
+            <p:growl id="growl" life="2000" />
+
+            <div>
+                <p:commandButton id="saveButton" 
+                                 action="#{urlCreateView.save}"
+                                 value="Сохранить"
+
+                                 ajax="false" update="growl"
+                                 />
+
+                <span style="margin-right:20px;"/>
+
+                <p:commandButton id="cancellButton" 
+                                 action="#{urlCreateView.cancell}"
+                                 value="Отмена"
+
+                                 ajax="false" update="growl"
+                                 />
+            </div>       
+
+            <p:separator />
+
+            <div style="text-decoration: underline;">
+                <h3>Новый URL</h3>
+            </div>
+
+            <!--Fields-->
+            <div class="ui-fluid">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2, ui-grid-col-5, ui-grid-col-1" layout="grid" styleClass="ui-panelgrid-blank ui-fluid">
+
+                    <p:outputLabel for="name" value="Наименование:"/>
+                    <p:inputText id="name" value="#{urlCreateView.obj.name}"/>
+                    <p:spacer />
+
+                    <p:outputLabel for="urlCatalog" value="id родительского каталога:"/>
+                    <p:selectOneMenu id="urlCatalog"  value="#{urlCreateView.selectedCatalogId}" dynamic="true" style="width:125px">
+                        <f:selectItems value="#{urlCreateView.catalogList}" 
+                                       var="option" 
+                                       itemValue="#{option.id}"
+                                       itemLabel="#{option.id} - #{option.name}" />
+                    </p:selectOneMenu>
+                    <p:spacer />
+
+                    <p:spacer />
+                    <p:spacer />
+                    <p:spacer />
+
+                </p:panelGrid>
+            </div>
+
+
+
+        </h:form>
+
+
+    </ui:define>
+
+
+</ui:composition>

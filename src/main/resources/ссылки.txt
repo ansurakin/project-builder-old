@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/46524998/how-to-autowire-spring-service-with-class-name
+http://www.codesenior.com/en/tutorial/Spring-Generic-DAO-and-Generic-Service-Implementation
+https://blog.jayway.com/2013/11/03/spring-and-autowiring-of-generic-types/
+https://www.baeldung.com/spring-data-jpa-method-in-all-repositories
+https://www.baeldung.com/spring-data-composable-repositories
+https://www.tune-it.ru/web/ivanuskov/blog/-/blogs/pereispol-zuemye-komponenty-v-jsf?_33_redirect=https%3A%2F%2Fwww.tune-it.ru%2Fblogs%3Fp_p_id%3D115%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-1%26p_p_col_count%3D1%26_115_cur%3D5%26_115_keywords%3D%26_115_advancedSearch%3Dfalse%26_115_delta%3D20%26_115_resetCur%3Dfalse%26_115_andOperator%3Dtrue%26_115_struts_action%3D%252Fblogs_aggregator%252Fview
+https://stackoverflow.com/questions/42781264/multiple-base-repositories-in-spring-data-jpa
+https://stackoverflow.com/questions/4792862/how-to-include-another-xhtml-in-xhtml-using-jsf-2-0-facelets
+
+

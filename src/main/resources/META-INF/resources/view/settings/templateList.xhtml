@@ -1,0 +1,106 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/template/mainLayout.xhtml">
+
+    <ui:define name="title">
+        Шаблоны
+    </ui:define>
+
+
+    <ui:define name="content">
+
+        <h3>Список шаблонов</h3>
+
+        <h:form id="templateListForm">
+
+            <p:growl id="msgs" showDetail="true"/>
+
+            <div class="ui-g">
+                <a href="/template/create" target="_blank" >Создать</a>
+            </div>
+
+
+
+            <p:dataTable id="dtTemplateList" 
+                         var="item" 
+                         value="#{templateList.list}"
+                         filteredValue="#{templateList.filteredList}"
+                         
+                         emptyMessage="Нет данных"
+                         sortMode="multiple"
+                         paginator="true" rows="20" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="10,20,100"                         
+                         editable="true"
+                         >
+
+                <p:ajax event="rowEdit" listener="#{templateList.onRowEdit}" update=":templateListForm:msgs" />
+                <p:ajax event="rowEditCancel" listener="#{templateList.onRowCancel}" update=":templateListForm:msgs" />                
+
+                <p:column headerText="Id" 
+                          sortBy="#{item.id}"
+                          filterBy="#{item.id}" filterMatchMode="contains"
+
+                          width="10%"
+                          >
+                    <h:outputText value="#{item.id}" />
+                </p:column>
+
+                <p:column headerText="Наименование"
+                          sortBy="#{item.name}"
+                          filterBy="#{item.name}" filterMatchMode="contains"
+                          >
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{item.name}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{item.name}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Содержимое" 
+                          sortBy="#{item.content}"
+                          filterBy="#{item.content}" filterMatchMode="contains"
+
+                          width="50%"
+                          >
+                    <p:cellEditor>
+                        <f:facet name="output"><pre><code><h:outputText value="#{item.content}" /></code></pre></f:facet>
+                        <f:facet name="input"><p:inputTextarea value="#{item.content}" rows="10" cols="50" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                     
+                </p:column>
+
+                <p:column headerText="Порядковый номер" 
+                          sortBy="#{item.orderNumber}"
+                          filterBy="#{item.orderNumber}" filterMatchMode="contains"
+                          
+                          width="10%"
+                          >
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{item.orderNumber}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{item.orderNumber}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+
+                <!--Редактирование begin-->
+                <p:column headerText="Edit" style="width:32px">
+                    <p:rowEditor />
+                </p:column>
+
+                <p:column headerText="Delete" style="width:5%" >
+                    <p:commandButton actionListener="#{templateList.delete(item)}"                                      
+                                     update=":templateListForm"
+                                     icon="ui-icon-trash" />
+                </p:column>
+                <!--Редактирование end-->
+                
+            </p:dataTable>    
+
+        </h:form>
+
+    </ui:define>
+
+
+</ui:composition>

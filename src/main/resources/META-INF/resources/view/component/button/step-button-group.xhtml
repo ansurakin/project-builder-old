@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                >
+
+
+    <div>
+        <p:commandButton id="previousButton" 
+                         action="#{stepButtonGroupVc.previousButtonAction}"
+                         value="&lt; Назад"
+
+                         disabled="true" ajax="false" update="growl"
+                         />
+
+        <p:commandButton id="nextButton" 
+                         action="#{stepButtonGroupVc.nextButtonAction}"
+                         value="Далее &gt;"
+
+                         ajax="false" update="growl"
+                         />
+
+        <p:commandButton id="finishButton" 
+                         action="#{stepButtonGroupVc.finishButtonAction}"
+                         value="Готово"
+
+                         ajax="false" update="growl"
+                         />
+
+        <span style="margin-right:20px;"/>
+
+        <p:commandButton id="cancellButton" 
+                         action="#{stepButtonGroupVc.cancellButtonAction}"
+                         value="Отмена"
+
+                         ajax="false" update="growl"
+                         />
+    </div>
+
+
+</ui:composition>
